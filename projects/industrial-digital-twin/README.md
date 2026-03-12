@@ -77,10 +77,8 @@ python industrial_publisher.py
 
 ```
 
-
-
 ---
 
-**Author:** Youssef Fellah
-**Hardware:** Dell Latitude 3550
-**Environment:** Fedora 43 / Python 3.12
+*Authored by Youssef Fellah.*
+
+*Developed as part of an internship - Broker immobilier.*
