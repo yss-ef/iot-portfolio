@@ -37,6 +37,5 @@ pip install paho-mqtt
 ## License
 MIT
 
----
-*Authored by Youssef Fellah.*
-*Developed for the Engineering Cycle - Mundiapolis University.*
+Authored by Youssef Fellah.  
+Developed for the Engineering Cycle - Mundiapolis University.

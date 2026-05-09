@@ -20,6 +20,5 @@ This portfolio demonstrates advanced expertise in the MQTT ecosystem, transition
 *   **Broker**: Eclipse Mosquitto
 *   **Security**: X.509 certificatess, Asymmetric Encryption
 
----
-*Authored by Youssef Fellah.*
-*Developed for the Engineering Cycle - Mundiapolis University.*
+Authored by Youssef Fellah.  
+Developed for the Engineering Cycle - Mundiapolis University.
