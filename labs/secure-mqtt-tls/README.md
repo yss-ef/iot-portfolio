@@ -1,36 +1,35 @@
-# Secure MQTT TLS Lab
+# Secure MQTT TLS: Hardened Connectivity Lab
 
-This repository explores the security aspects of the MQTT protocol, specifically focusing on **Mutual TLS (mTLS)** and the **Last Will and Testament (LWT)** feature.
+## Overview
+This laboratory explores the implementation of robust security patterns within the MQTT protocol, specifically focusing on **Mutual TLS (mTLS)** to prevent unauthorized asset access and data interception.
 
-## Features
-- **TLS/SSL Encryption**: Secures the communication between the client and the broker using certificates.
-- **Mutual Authentication**: Both the client and the broker verify each other's identities using certificates (mTLS).
-- **Last Will and Testament (LWT)**: Ensures the broker publishes a "status" message if the sensor disconnects unexpectedly.
-- **Mosquitto Configuration**: Includes a custom configuration for a local Mosquitto broker with TLS enabled.
+## Security Architecture
+The system moves beyond simple authentication to a full certificate-based trust chain:
 
-## Security Configuration
-The project uses the following certificate structure (located in the `Certificate` directory):
-- `ca/ca.crt`: Root Certificate Authority.
-- `client/client.crt` & `client/client.key`: Client-side certificates for authentication.
-- `broker/broker.crt` & `broker/broker.key`: Broker-side certificates.
+### mTLS Handshake Flow
+```mermaid
+sequenceDiagram
+    participant Client as IoT Sensor
+    participant Broker as Mosquitto Broker
+    participant CA as certificates Authority
 
-## Prerequisites
-- Python 3.x
-- `paho-mqtt` library (v2.x)
-- Mosquitto MQTT Broker (installed locally)
-
-## Installation
-```bash
-pip install paho-mqtt
+    Note over Client,Broker: Mutual Trust Setup
+    Client->>Broker: Client certificates (signed by CA)
+    Broker->>Client: Broker certificates (signed by CA)
+    Broker->>Broker: Verify Client Identity
+    Client->>Client: Verify Broker Identity
+    Note over Client,Broker: Secure Encrypted Tunnel Established
 ```
 
-## Setup & Usage
-1. **Broker Setup**:
-   Configure your Mosquitto broker to use the provided `mosquitto-tls.conf` and the certificates in the `Certificate` folder.
-2. **Run the Secure Sensor**:
-   ```bash
-   python secure-sensor.py
-   ```
+## Key Implementations
+*   **mTLS Encryption**: Full payload encryption using X.509 certificates.
+*   **Mutual Authentication**: Two-way verification ensuring only trusted sensors can publish to the industrial broker.
+*   **Last Will and Testament (LWT)**: Automated status alerts published by the broker if a sensor experiences an ungraceful disconnect.
 
-## License
-MIT
+## Project Structure
+*   **certificates/**: X.509 trust chain (Root CA, Broker, and Client certs).
+*   **secure-sensor.py**: Python client implementing SSL/TLS context and LWT logic.
+*   **reports/**: Technical analysis and security audit documentation.
+
+---
+*Developed for the IoT Module - Mundiapolis University.*

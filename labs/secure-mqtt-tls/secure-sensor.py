@@ -4,9 +4,9 @@ import ssl
 import time
 
 # --- Chemins vers les certificats ---
-CA_CERT = "./Certificate/ca/ca.crt"
-CLIENT_CERT = "./Certificate/client/client.crt"
-CLIENT_KEY = "./Certificate/client/client.key"
+CA_CERT = "./certificates/ca/ca.crt"
+CLIENT_CERT = "./certificates/client/client.crt"
+CLIENT_KEY = "./certificates/client/client.key"
 BROKER = "localhost"
 PORT = 8883
 
