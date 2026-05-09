@@ -36,3 +36,7 @@ graph TD
 
 ---
 *Developed during professional Industrial IoT deep-dive.*
+
+---
+*Authored by Youssef Fellah.*
+*Developed for the Engineering Cycle - Mundiapolis University.*

@@ -22,3 +22,4 @@ This portfolio demonstrates advanced expertise in the MQTT ecosystem, transition
 
 ---
 *Authored by Youssef Fellah.*
+*Developed for the Engineering Cycle - Mundiapolis University.*
