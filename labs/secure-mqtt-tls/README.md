@@ -1,12 +1,16 @@
-# Secure MQTT TLS: Hardened Connectivity Lab
+# Secure MQTT TLS hardened connectivity lab
 
-## Overview
-This laboratory explores the implementation of robust security patterns within the MQTT protocol, specifically focusing on **Mutual TLS (mTLS)** to prevent unauthorized asset access and data interception.
+This laboratory explores the implementation of robust security patterns within
+the MQTT protocol. The primary focus is on Mutual TLS (mTLS) to prevent
+unauthorized asset access and data interception.
 
-## Security Architecture
-The system moves beyond simple authentication to a full certificate-based trust chain:
+## Security architecture
 
-### mTLS Handshake Flow
+The system implements a full certificate-based trust chain, moving beyond
+simple authentication.
+
+### mTLS handshake flow
+
 ```mermaid
 sequenceDiagram
     participant Client as IoT Sensor
@@ -21,18 +25,21 @@ sequenceDiagram
     Note over Client,Broker: Secure Encrypted Tunnel Established
 ```
 
-## Key Implementations
-*   **mTLS Encryption**: Full payload encryption using X.509 certificates.
-*   **Mutual Authentication**: Two-way verification ensuring only trusted sensors can publish to the industrial broker.
-*   **Last Will and Testament (LWT)**: Automated status alerts published by the broker if a sensor experiences an ungraceful disconnect.
+## Key implementations
 
-## Project Structure
-*   **certificates/**: X.509 trust chain (Root CA, Broker, and Client certs).
-*   **secure-sensor.py**: Python client implementing SSL/TLS context and LWT logic.
-*   **reports/**: Technical analysis and security audit documentation.
+- mTLS encryption: Provides full payload encryption using X.509 certificates.
+- Mutual authentication: Implements two-way verification to ensure only trusted
+  sensors can publish to the industrial broker.
+- Last Will and Testament (LWT): Automates status alerts published by the
+  broker if a sensor experiences an ungraceful disconnect.
 
----
-*Developed for the IoT Module - Mundiapolis University.*
+## Project structure
 
-Authored by Youssef Fellah.  
-Developed for the Engineering Cycle - Mundiapolis University.
+- `certificates/`: Contains the X.509 trust chain, including Root CA, broker,
+  and client certificates.
+- `secure-sensor.py`: A Python client that implements SSL/TLS context and LWT
+  logic.
+- `reports/`: Technical analysis and security audit documentation.
+
+Authored by Youssef Fellah.
+Developed for the Engineering Cycle at Mundiapolis University.

@@ -1,9 +1,10 @@
-# Industrial Digital Twin: CNC Telemetry & Thermal Modeling
+# Industrial digital twin: CNC telemetry and thermal modeling
 
-## Overview
-A high-performance Industry 4.0 simulation engineered to bridge the gap between physical physics modeling and secure cloud telemetry. This project implements a multi-threaded engine to orchestrate Digital Twins of industrial assets.
+This project is an Industry 4.0 simulation designed to bridge physical physics
+modeling with secure cloud telemetry. It implements a multi-threaded engine to
+orchestrate digital twins of industrial assets.
 
-## System Architecture
+## System architecture
 
 ```mermaid
 graph TD
@@ -19,23 +20,28 @@ graph TD
     end
 ```
 
-## Core Implementations
+## Core implementations
 
-### 1. Physics-Based Modeling
-*   **Thermal Dynamics**: Mathematical modeling of spindle temperature as a function of rotational speed ($RPM$) and friction over time.
-*   **Environmental Simulation**: Stochastic modeling using Gaussian noise to simulate real-world atmospheric data fluctuations.
+### 1. Physics-based modeling
 
-### 2. Reliable Messaging (QoS 1)
-*   **Message Persistence**: Implementation of acknowledgment handshakes to ensure critical spindle overheat alerts survive transient network failures.
-*   **Decoupled Pub/Sub**: Multi-threaded architecture ensuring the physical engine remains non-blocking during network latency.
+- Thermal dynamics: Mathematical modeling of spindle temperature as a function
+  of rotational speed (RPM) and friction over time.
+- Environmental simulation: Stochastic modeling using Gaussian noise to
+  simulate real-world atmospheric data fluctuations.
 
-## Project Structure
-*   **industrial-publisher.py**: Multi-threaded simulation engine for industrial assets.
-*   **dashboard-client.py**: Real-time telemetry consumer and visualizer.
-*   **sensor-sim.py**: Core physics-based Digital Twin definitions.
+### 2. Reliable messaging (QoS 1)
 
----
-*Developed during professional Industrial IoT deep-dive.*
+- Message persistence: Implementation of acknowledgment handshakes to ensure
+  critical spindle overheat alerts survive network failures.
+- Decoupled pub/sub: Multi-threaded architecture that ensures the physical
+  engine remains non-blocking during network latency.
 
-Authored by Youssef Fellah.  
-Developed for the Engineering Cycle - Mundiapolis University.
+## Project structure
+
+- `industrial-publisher.py`: Multi-threaded simulation engine for industrial
+  assets.
+- `dashboard-client.py`: Real-time telemetry consumer and visualizer.
+- `sensor-sim.py`: Core physics-based digital twin definitions.
+
+Authored by Youssef Fellah.
+Developed for professional Industrial IoT research.

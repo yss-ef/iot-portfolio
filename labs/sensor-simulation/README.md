@@ -1,30 +1,41 @@
-# MQTT Sensor Simulation Lab
+# MQTT sensor simulation lab
 
-This project demonstrates a basic IoT architecture using the MQTT protocol. It includes a sensor simulator that publishes temperature data and a reader that subscribes to these updates in real-time.
+This project demonstrates a foundational IoT architecture using the MQTT
+protocol. It includes a sensor simulator that publishes temperature data and a
+reader that subscribes to updates in real-time.
 
 ## Features
-- **Sensor Simulator**: Generates and publishes random temperature data with realistic fluctuations.
-- **Sensor Reader**: Subscribes to the MQTT topic and processes incoming data.
-- **Cloud Broker**: Uses `broker.hivemq.com` for easy testing without local infrastructure.
-- **JSON Format**: Data is exchanged using the JSON format for structured information.
+
+- Sensor simulator: Generates and publishes random temperature data with
+  realistic fluctuations.
+- Sensor reader: Subscribes to the MQTT topic and processes incoming data.
+- Cloud broker: Uses `broker.hivemq.com` for testing without local
+  infrastructure.
+- JSON format: Exchanges data using the JSON format for structured information.
 
 ## Architecture
-- **Protocol**: MQTT (Message Queuing Telemetry Transport)
-- **Broker**: `broker.hivemq.com`
-- **Topic**: `youssef/home/sensors/temperature`
-- **Publisher**: `sensor-simulator.py`
-- **Subscriber**: `sensor-reader.py`
+
+- Protocol: MQTT (Message Queuing Telemetry Transport)
+- Broker: `broker.hivemq.com`
+- Topic: `youssef/home/sensors/temperature`
+- Publisher: `sensor-simulator.py`
+- Subscriber: `sensor-reader.py`
 
 ## Prerequisites
+
 - Python 3.x
 - `paho-mqtt` library
 
 ## Installation
+
 ```bash
 pip install paho-mqtt
 ```
 
 ## Usage
+
+Follow these steps to run the simulation:
+
 1. Start the reader to begin listening for messages:
    ```bash
    python sensor-reader.py
@@ -35,7 +46,8 @@ pip install paho-mqtt
    ```
 
 ## License
-MIT
 
-Authored by Youssef Fellah.  
-Developed for the Engineering Cycle - Mundiapolis University.
+This project is licensed under the MIT License.
+
+Authored by Youssef Fellah.
+Developed for the Engineering Cycle at Mundiapolis University.
